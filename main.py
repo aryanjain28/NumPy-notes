@@ -42,3 +42,23 @@ myArray0 = myArray0.reshape(3,5,2)
 # size of each item
 # print(myArray0.itemsize)
 
+
+myArray1 = numpy.empty([3,3], dtype=int)
+# print(myArray1)
+
+myArray2 = numpy.zeros([3,4], dtype=[('x', 'i1'), ('y', '>i2')])
+# print(myArray2)
+
+x = 'Aryan', 'Jain'
+myArray3 = numpy.asarray(x)
+# print(myArray3)
+y = 1,2,3
+myArray3 = numpy.asarray(y)
+# print(myArray3)
+
+#difference between arange and linespace
+print(numpy.arange(10, 20))
+print("******")
+print(numpy.linspace(10, 20, 4, dtype=float))
+print("******")
+print(numpy.logspace(1.0, 2.0, 10))
