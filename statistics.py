@@ -18,6 +18,8 @@ print(numpy.amax(a, 1))     #horozontal
 print("\nGetting a range between maximum and minimum : ")
 print(numpy.ptp(a))     #max-min : 8-1 = 7
 
+#ptp == peek to peek
+
 print("\nGetting a range between maximum and minimum a/c to axis: ")
 print(numpy.ptp(a, 0))
 
