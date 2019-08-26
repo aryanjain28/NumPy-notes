@@ -1,0 +1,70 @@
+import numpy
+
+myArray = numpy.array([[43,5,65,767],[65,76,34,35],[87,43,65,32]])
+print(myArray)
+print("")
+print(numpy.sort(myArray))
+print("")
+print(numpy.sort(myArray, axis=0))
+print("")
+print(numpy.sort(myArray, axis=1))
+print("")
+print(numpy.sort(numpy.sort(myArray, axis=1), axis=0))
+
+print("*******************************************\n\n")
+
+myArray2 = numpy.array([[('Aryan', 21), ('Aayush', 19)], [('Vipul', 19), ('Nikhil', 18)]], dtype=[('name', 'S20'), ('age', 'i1')])
+print(myArray2)
+print("")
+print(numpy.sort(myArray2, axis=1, order='name'))
+print("")
+print(numpy.sort(myArray2, axis=1, order='age'))
+print("")
+print(numpy.sort(numpy.sort(myArray2, axis=0, order='name'), axis=1, order='age'))
+
+print("*******************************************\n\n")
+
+myArray3 = numpy.array(['Sandeep', 'Jain','Aryan'])
+print(myArray3)
+x = numpy.argsort(myArray3)   #will return indices
+print(x)
+print(myArray3[x])      #sorted
+[print(myArray3[i], end=" ") for i in x]     #using for loop
+
+print("\n\n*******************************************\n\n")
+
+fname = numpy.array(['Aryan', 'Aayush', 'Aayush'])
+lname = numpy.array((['Jain', 'Singh', 'Jain']))
+
+#will return indices
+
+print(numpy.lexsort((lname, fname)))
+[print(fname[i]+" "+lname[i]) for i in numpy.lexsort((lname, fname))]       #sorted array
+
+print("\n\n*******************************************\n\n")
+
+
+
+herArray = numpy.array([[1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
+print(herArray)
+
+print(herArray.flatten()[numpy.argmin(herArray)])
+
+maxindex = numpy.argmax(herArray, axis=1)
+print(maxindex)
+print(herArray)
+
+hisArray = numpy.array([[12,0,45],[64,0,0],[25,2,5]])
+print(hisArray)
+
+x = hisArray[[numpy.nonzero(hisArray)[0]],[numpy.nonzero(hisArray)[1]]][0]
+print()
+print(numpy.array(x).reshape(2,3))
+
+x = numpy.arange(9).reshape(3, 3)
+
+print(x)
+y = numpy.where(x>2)
+print(y)
+print(x[y])
+
